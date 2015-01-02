@@ -63,7 +63,7 @@ def post_in_wordpress(q):
 	# link = browser.current_url
 	link = browser.find_element_by_xpath('//*[@id="editor"]/div[1]/p/a').get_attribute('href')
 
-	browser.close()	
+	browser.quit()	
 
 	# print link
 	return link
