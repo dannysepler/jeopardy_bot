@@ -15,6 +15,8 @@ def post_in_wordpress(q):
 	browser.find_element_by_xpath('//*[@id="wp-admin-bar-ab-new-post"]/a').click()
 
 	# TITLE
+		# loops that look like this are here because wordpress
+		# is slow in these steps. which crashes the program.
 	while(True):
 		try:
 			browser.find_element_by_xpath('//*[@id="title"]').send_keys('Answer: '+str(q[6]))
@@ -24,7 +26,12 @@ def post_in_wordpress(q):
 
 	# FULL TEXT
 		# question
-	browser.find_element_by_xpath('//*[@id="mceu_9"]/button/i').click() # bold
+	while(True):
+		try:
+			browser.find_element_by_xpath('//*[@id="mceu_9"]/button/i').click()
+			break
+		except: # error
+			continue
 	browser.find_element_by_xpath('//*[@id="mceu_10"]/button/i').click() # italic
 
 	browser.switch_to.frame(browser.find_element_by_tag_name('iframe'))

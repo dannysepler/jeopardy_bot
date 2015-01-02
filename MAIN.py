@@ -23,18 +23,20 @@ api = tweepy.API(auth)
 # -----
 
 def main():
-	with open('1.csv', 'rb') as f:
+	file_no = str(randint(1,3))
+
+	with open('questions/'+file_no+'.csv', 'rb') as f:
 		mycsv = list(csv.reader(f))
 
 		# PICK QUEgSTION
 		q = mycsv[ randint(0,1762) ]
-		print '-----------\ngot question:\n'
+		print '-----------\nthis is from '+file_no+'.csv:\n'
 
 		# CHECK TWEET LENGTH
 		tweetsofar = str(q[3])+' FOR '+str(q[4])+': '+str(q[5])+'. '
 		tweet = tweetsofar+'http://goo.gl/1x09QO0' # sample link
 		print tweet+'\n'
-		print 'length of tweet is '+str(len(tweet))
+		print 'tweet is '+str(len(tweet))+' characters'
 
 		if ( len(tweet)<140 ):
 
@@ -56,8 +58,8 @@ def main():
 				main() # do over
 		
 		else:
-			print 'not within word limit. starting again...\n'
+			print 'which is too long. starting again...\n'
 			main()
 
-print '\n-----------\nGood morning, Danny\n-----------\n'
+print '\n\nGood morning, Danny\n\n'
 main()
