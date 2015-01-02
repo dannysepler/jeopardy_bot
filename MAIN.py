@@ -7,6 +7,7 @@ from random import randint
  
 from wordpress import post_in_wordpress
 from shorten_url import shorten_url
+from robot_ascii import robot1
 
 # Twitter convention
 CONSUMER_KEY = 'iq8cq3IAWBAfxjZORQ705o6zD'
@@ -61,5 +62,7 @@ def main():
 			print 'which is too long. starting again...\n'
 			main()
 
+print '\n\n'
+robot1()
 print '\n\nGood morning, Danny\n\n'
 main()
