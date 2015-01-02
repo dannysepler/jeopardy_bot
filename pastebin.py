@@ -1,3 +1,18 @@
+# -----------------------------
+#
+# This was used in the initial
+# iterations of the twitterbot.
+# it would post in pastebin -- as 
+# opposed to wordpress, which is
+# does now. pastebin was uglier.
+#
+# I'm keeping this in the source
+# code just in case
+#
+# -----------------------------
+
+
+
 import selenium
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException

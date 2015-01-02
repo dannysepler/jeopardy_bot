@@ -1,0 +1,6 @@
+#!/bin/bash
+find . -name "*.pyc" -exec rm -rf {} \;
+
+# cleans all compiled python files (ones that end in '.pyc')
+# run with './clean'
+# make sure permissions are 755 -- 'chmod 755 clean' -- in command line

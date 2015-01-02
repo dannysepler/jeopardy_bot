@@ -1,11 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
- 
+
 import tweepy, time, sys, csv, random, json
 
 from random import randint
  
-from pastebin import post_in_pastebin
 from wordpress import post_in_wordpress
 from shorten_url import shorten_url
 
